@@ -24,8 +24,8 @@ function pageload() {
         playerstatus = 0
     }    
 };
-//Array(OSpots);
-//Array(XSpots);
+const OSpots = [];
+const XSpots = [];
 function placeObject(event) {
     const element = event.target;
     if (playerstatus === 1) {
@@ -35,6 +35,9 @@ function placeObject(event) {
             console.log(turn)
             if (element.textContent === "") {
                 element.textContent = "X"
+                XSpots.push(element.id)
+                console.log(XSpots)
+                winCon(1)
             }
             else {
                 alert("You have chosen to skip your turn.\nPlease pick a valid square next time.")
@@ -46,6 +49,9 @@ function placeObject(event) {
             console.log(turn)
             if (element.textContent === "") {
                 element.textContent = "O"
+                OSpots.push(element.id)
+                console.log(OSpots)
+                winCon(0)
             }
             else {
                 alert("You have chosen to skip your turn.\nPlease pick a valid square next time.")
@@ -69,7 +75,8 @@ function AI() {
     if (randomNum === 1) {
         if (document.getElementById("UL").textContent === "") {
             document.getElementById("UL").textContent = "O";
-            OSpots
+            OSpots.push("UL")
+            winCon(0)
         }
         else {
             AI()
@@ -78,7 +85,8 @@ function AI() {
     else if (randomNum === 2) {
         if (document.getElementById("UM").textContent === "") {
             document.getElementById("UM").textContent = "O"
-            OSpot
+            OSpot.push("UM")
+            winCon(0)
         }
         else {
             AI()
@@ -87,7 +95,8 @@ function AI() {
     else if (randomNum === 3) {
         if (document.getElementById("UR").textContent === "") {
             document.getElementById("UR").textContent = "O";
-            OSpots
+            OSpots.push("UR")
+            winCon(0)
         }
         else {
             AI()
@@ -96,7 +105,8 @@ function AI() {
     else if (randomNum === 4) {
         if (document.getElementById("ML").textContent === "") {
             document.getElementById("ML").textContent = "O";
-            OSpots
+            OSpots.push("ML")
+            winCon(0)
         }
         else {
             AI()
@@ -105,7 +115,8 @@ function AI() {
     else if (randomNum === 5) {
         if (document.getElementById("MM").textContent === "") {
             document.getElementById("MM").textContent = "O";
-            OSpots
+            OSpots.push("MM")
+            winCon(0)
         }
         else {
             AI()
@@ -114,7 +125,8 @@ function AI() {
     else if (randomNum === 6) {
         if (document.getElementById("MR").textContent === "") {
             document.getElementById("MR").textContent = "O";
-            OSpots
+            OSpots.push("MR")
+            winCon(0)
         }
         else {
             AI()
@@ -123,7 +135,8 @@ function AI() {
     else if (randomNum === 7) {
         if (document.getElementById("BL").textContent === "") {
             document.getElementById("BL").textContent = "O";
-            OSpots
+            OSpots.push("BL")
+            winCon(0)
         }
         else {
             AI()
@@ -132,7 +145,8 @@ function AI() {
     else if (randomNum === 8) {
         if (document.getElementById("BM").textContent === "") {
             document.getElementById("BM").textContent = "O";
-            OSpots
+            OSpots.push("BM")
+            winCon(0)
         }
         else {
             AI()
@@ -141,7 +155,8 @@ function AI() {
     else if (randomNum === 9) {
         if (document.getElementById("BR").textContent === "") {
             document.getElementById("BR").textContent = "O";
-            OSpots
+            OSpots.push("BR")
+            winCon(0)
         }
         else {
             AI()
@@ -153,8 +168,84 @@ function AI() {
     }
     return randomNum
 };
-function winCon() {
-    //I don't have anything yet, but be patient. I have a lot to work on.
+function winCon(int) {
+    if (int > 0) {
+        Index = XSpots.indexOf;
+        if (Index("UL") > -1 && Index("UM") > -1 && Index("UR") > -1) {
+            console.log("X got the full top row.");
+            alert("X has won.");
+        }
+        else if (Index("ML") > -1 && Index("MM") > -1 && Index("MR") > -1) {
+            console.log("X got the full middle row.")
+            alert("X has won.")
+        }
+        else if (Index("BL") > -1 && Index("BM") > -1 && Index("BR") > -1) {
+            console.log("X got the full middle row.")
+            alert("X has won.")
+        }
+        else if (Index("UL") > -1 && Index("MM") > -1 && Index("BR") > -1) {
+            console.log("X got a diagonal win. (UL, MM, BR)")
+            alert("X has won.")
+        }
+        else if (Index("BL") > -1 && Index("MM") > -1 && Index("UR") > -1) {
+            console.log("X got a diagonal win. (BL, MM, UR)")
+            alert("X has won.")
+        }
+        else if (Index("UL") > -1 && Index("ML") > -1 && Index("BL") > -1) {
+            console.log("X got a full colomn.")
+            alert("X has won.")
+        }
+        else if (Index("UM") > -1 && Index("MM") > -1 && Index("BM") > -1) {
+            console.log("X got a full colomn.")
+            alert("X has won.")
+        }
+        else if (Index("UR") > -1 && Index("MR") > -1 && Index("BR") > -1) {
+            console.log("X got a full colomn.")
+            alert("X has won.")
+        }
+        else {
+            console.log("No one has won yet.")
+        }
+    }
+    else {
+        Index = OSpots.indexOf;
+        if (Index("UL") > -1 && Index("UM") > -1 && Index("UR") > -1) {
+            console.log("O got the full top row.");
+            alert("O has won.");
+        }
+        else if (Index("ML") > -1 && Index("MM") > -1 && Index("MR") > -1) {
+            console.log("O got the full middle row.")
+            alert("O has won.")
+        }
+        else if (Index("BL") > -1 && Index("BM") > -1 && Index("BR") > -1) {
+            console.log("O got the full middle row.")
+            alert("O has won.")
+        }
+        else if (Index("UL") > -1 && Index("MM") > -1 && Index("BR") > -1) {
+            console.log("O got a diagonal win. (UL, MM, BR)")
+            alert("O has won.")
+        }
+        else if (Index("BL") > -1 && Index("MM") > -1 && Index("UR") > -1) {
+            console.log("O got a diagonal win. (BL, MM, UR)")
+            alert("O has won.")
+        }
+        else if (Index("UL") > -1 && Index("ML") > -1 && Index("BL") > -1) {
+            console.log("O got a full colomn.")
+            alert("O has won.")
+        }
+        else if (Index("UM") > -1 && Index("MM") > -1 && Index("BM") > -1) {
+            console.log("O got a full colomn.")
+            alert("O has won.")
+        }
+        else if (Index("UR") > -1 && Index("MR") > -1 && Index("BR") > -1) {
+            console.log("O got a full colomn.")
+            alert("O has won.")
+        }
+        else {
+            console.log("No one has won yet.")
+        }
+    }
+
 }
 
 // Perm stuff. I'm not gonna touch this any, if at all.
