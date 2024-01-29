@@ -24,6 +24,8 @@ function pageload() {
         playerstatus = 0
     }    
 };
+//Array(OSpots);
+//Array(XSpots);
 function placeObject(event) {
     const element = event.target;
     if (playerstatus === 1) {
@@ -61,11 +63,13 @@ function placeObject(event) {
     }
     console.log(element)
 };
+
 function AI() {
     randomNum = getRandomInt(1, 9)
     if (randomNum === 1) {
         if (document.getElementById("UL").textContent === "") {
-            document.getElementById("UL").textContent = "O"
+            document.getElementById("UL").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -74,6 +78,7 @@ function AI() {
     else if (randomNum === 2) {
         if (document.getElementById("UM").textContent === "") {
             document.getElementById("UM").textContent = "O"
+            OSpot
         }
         else {
             AI()
@@ -81,7 +86,8 @@ function AI() {
     }
     else if (randomNum === 3) {
         if (document.getElementById("UR").textContent === "") {
-            document.getElementById("UR").textContent = "O"
+            document.getElementById("UR").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -89,7 +95,8 @@ function AI() {
     }
     else if (randomNum === 4) {
         if (document.getElementById("ML").textContent === "") {
-            document.getElementById("ML").textContent = "O"
+            document.getElementById("ML").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -97,7 +104,8 @@ function AI() {
     }
     else if (randomNum === 5) {
         if (document.getElementById("MM").textContent === "") {
-            document.getElementById("MM").textContent = "O"
+            document.getElementById("MM").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -105,7 +113,8 @@ function AI() {
     }
     else if (randomNum === 6) {
         if (document.getElementById("MR").textContent === "") {
-            document.getElementById("MR").textContent = "O"
+            document.getElementById("MR").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -113,7 +122,8 @@ function AI() {
     }
     else if (randomNum === 7) {
         if (document.getElementById("BL").textContent === "") {
-            document.getElementById("BL").textContent = "O"
+            document.getElementById("BL").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -121,7 +131,8 @@ function AI() {
     }
     else if (randomNum === 8) {
         if (document.getElementById("BM").textContent === "") {
-            document.getElementById("BM").textContent = "O"
+            document.getElementById("BM").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -129,7 +140,8 @@ function AI() {
     }
     else if (randomNum === 9) {
         if (document.getElementById("BR").textContent === "") {
-            document.getElementById("BR").textContent = "O"
+            document.getElementById("BR").textContent = "O";
+            OSpots
         }
         else {
             AI()
@@ -140,6 +152,9 @@ function AI() {
         AI()
     }
     return randomNum
+};
+function winCon() {
+    //I don't have anything yet, but be patient. I have a lot to work on.
 }
 
 // Perm stuff. I'm not gonna touch this any, if at all.
