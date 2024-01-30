@@ -121,5 +121,5 @@ body {
     border-color: cornflowerblue;
 }
 .darkmode div div:hover {
-    background-color: darkgray;
+    background-color: transparent;
 }
