@@ -1,17 +1,6 @@
 var playerstatus;
 var turn = "X";
 var randomNum;
-// Upper row
-const UM = document.getElementById("UM")
-const UR = document.getElementById("UR")
-// Middle row
-const MR = document.getElementById("MR")
-const ML = document.getElementById("ML")
-const MM = document.getElementById("MM")
-// Bottom row
-const BL = document.getElementById("BL")
-const BM = document.getElementById("BM")
-const BR = document.getElementById("BR")
 
 
 
@@ -23,7 +12,7 @@ function pageload() {
     else {
         playerstatus = 0
     }    
-};
+};//
 const OSpots = [];
 const XSpots = [];
 function placeObject(event) {
@@ -170,76 +159,89 @@ function AI() {
 };
 function winCon(int) {
     if (int > 0) {
-        Index = XSpots.indexOf;
-        if (Index("UL") > -1 && Index("UM") > -1 && Index("UR") > -1) {
+        if (XSpots.indexOf("UL") > -1 && XSpots.indexOf("UM") > -1 && XSpots.indexOf("UR") > -1) {
             console.log("X got the full top row.");
-            alert("X has won.");
+            setTimeout(reset(), 100)
         }
-        else if (Index("ML") > -1 && Index("MM") > -1 && Index("MR") > -1) {
+        else if (XSpots.indexOf("ML") > -1 && XSpots.indexOf("MM") > -1 && XSpots.indexOf("MR") > -1) {
             console.log("X got the full middle row.")
             alert("X has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("BL") > -1 && Index("BM") > -1 && Index("BR") > -1) {
+        else if (XSpots.indexOf("BL") > -1 && XSpots.indexOf("BM") > -1 && XSpots.indexOf("BR") > -1) {
             console.log("X got the full middle row.")
             alert("X has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UL") > -1 && Index("MM") > -1 && Index("BR") > -1) {
+        else if (XSpots.indexOf("UL") > -1 && XSpots.indexOf("MM") > -1 && XSpots.indexOf("BR") > -1) {
             console.log("X got a diagonal win. (UL, MM, BR)")
             alert("X has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("BL") > -1 && Index("MM") > -1 && Index("UR") > -1) {
+        else if (XSpots.indexOf("BL") > -1 && XSpots.indexOf("MM") > -1 && XSpots.indexOf("UR") > -1) {
             console.log("X got a diagonal win. (BL, MM, UR)")
             alert("X has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UL") > -1 && Index("ML") > -1 && Index("BL") > -1) {
+        else if (XSpots.indexOf("UL") > -1 && XSpots.indexOf("ML") > -1 && XSpots.indexOf("BL") > -1) {
             console.log("X got a full colomn.")
             alert("X has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UM") > -1 && Index("MM") > -1 && Index("BM") > -1) {
+        else if (XSpots.indexOf("UM") > -1 && XSpots.indexOf("MM") > -1 && XSpots.indexOf("BM") > -1) {
             console.log("X got a full colomn.")
             alert("X has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UR") > -1 && Index("MR") > -1 && Index("BR") > -1) {
+        else if (XSpots.indexOf("UR") > -1 && XSpots.indexOf("MR") > -1 && XSpots.indexOf("BR") > -1) {
             console.log("X got a full colomn.")
             alert("X has won.")
+            setTimeout(reset(), 100)
         }
         else {
             console.log("No one has won yet.")
         }
     }
     else {
-        Index = OSpots.indexOf;
-        if (Index("UL") > -1 && Index("UM") > -1 && Index("UR") > -1) {
+        if (OSpots.indexOf("UL") > -1 && OSpots.indexOf("UM") > -1 && OSpots.indexOf("UR") > -1) {
             console.log("O got the full top row.");
             alert("O has won.");
+            setTimeout(reset(), 100)
         }
-        else if (Index("ML") > -1 && Index("MM") > -1 && Index("MR") > -1) {
+        else if (OSpots.indexOf("ML") > -1 && OSpots.indexOf("MM") > -1 && OSpots.indexOf("MR") > -1) {
             console.log("O got the full middle row.")
             alert("O has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("BL") > -1 && Index("BM") > -1 && Index("BR") > -1) {
+        else if (OSpots.indexOf("BL") > -1 && OSpots.indexOf("BM") > -1 && OSpots.indexOf("BR") > -1) {
             console.log("O got the full middle row.")
             alert("O has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UL") > -1 && Index("MM") > -1 && Index("BR") > -1) {
+        else if (OSpots.indexOf("UL") > -1 && OSpots.indexOf("MM") > -1 && OSpots.indexOf("BR") > -1) {
             console.log("O got a diagonal win. (UL, MM, BR)")
             alert("O has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("BL") > -1 && Index("MM") > -1 && Index("UR") > -1) {
+        else if (OSpots.indexOf("BL") > -1 && OSpots.indexOf("MM") > -1 && OSpots.indexOf("UR") > -1) {
             console.log("O got a diagonal win. (BL, MM, UR)")
             alert("O has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UL") > -1 && Index("ML") > -1 && Index("BL") > -1) {
+        else if (OSpots.indexOf("UL") > -1 && OSpots.indexOf("ML") > -1 && OSpots.indexOf("BL") > -1) {
             console.log("O got a full colomn.")
             alert("O has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UM") > -1 && Index("MM") > -1 && Index("BM") > -1) {
+        else if (OSpots.indexOf("UM") > -1 && OSpots.indexOf("MM") > -1 && OSpots.indexOf("BM") > -1) {
             console.log("O got a full colomn.")
             alert("O has won.")
+            setTimeout(reset(), 100)
         }
-        else if (Index("UR") > -1 && Index("MR") > -1 && Index("BR") > -1) {
+        else if (OSpots.indexOf("UR") > -1 && OSpots.indexOf("MR") > -1 && OSpots.indexOf("BR") > -1) {
             console.log("O got a full colomn.")
             alert("O has won.")
+            setTimeout(reset(), 100)
         }
         else {
             console.log("No one has won yet.")
@@ -257,4 +259,44 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max+1);
     return Math.floor(Math.random() * (max - min) + min); // The maximum is inclusive and the minimum is inclusive
+};
+function reset() {
+    conf = window.confirm("Do you want to play again?")
+    if (conf == true) {
+        document.getElementById("UL").textContent = "";
+        document.getElementById("UM").textContent = "";
+        document.getElementById("UR").textContent = "";
+        document.getElementById("ML").textContent = "";
+        document.getElementById("MM").textContent = "";
+        document.getElementById("MR").textContent = "";
+        document.getElementById("BL").textContent = "";
+        document.getElementById("BM").textContent = "";
+        document.getElementById("BR").textContent = "";
+        while (XSpots.length != 0) {
+            XSpots.pop()
+        };
+        while (OSpots.length != 0) {
+            OSpots.pop()
+        };
+        console.log("Game board reset.");
+    }
+    else {
+        console.log("Game not resetted.")
+    }
+};
+var XScore = 0;
+var OScore = 0;
+function Score(str) {
+    if (str === "X") {
+        XScore += 1;
+        console.log("X's score: "+XScore);
+    }
+    else if (str === "O") {
+        OScore += 1;
+        console.log("O's score: "+OScore);
+    }
+    else {
+        alert("Stop inflating your score. I'll reset the page if you don't.");
+        console.error("Leave my stuff alone, you human. And, don't poke at other's functions.")
+    }
 };
