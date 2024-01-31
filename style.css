@@ -83,7 +83,7 @@ limitations under the License.
     display: flex;
     justify-content: center;
     align-items: center;
-    height:fit-content, unset;
+    height:fit-content;
     margin: 0;
 }
 
