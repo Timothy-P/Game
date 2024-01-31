@@ -1,5 +1,5 @@
 /*
-Copyright 2023 Timothy-P
+Copyright 2024 Timothy-P
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ limitations under the License.
     display: flex;
     justify-content: center;
     align-items: center;
-    height:fit-content;
+    height:fit-content, unset;
     margin: 0;
 }
 
@@ -122,4 +122,18 @@ body {
 }
 .darkmode div div:hover {
     background-color: transparent;
+}
+.Dcell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7.5em;
+    border: 2px solid #333;
+    cursor: pointer;
+}
+
+.Dcell:hover {
+    background-color: darkgrey;
 }
