@@ -358,7 +358,7 @@ function ShowScore(cmd) {
     else if (cmd.toLowerCase() == "o") {
         alert("O's score: "+OScore);
     }
-    else if (cmd.toLowerCase() == "s") {
+    else if (cmd.toLowerCase() == "x") {
         alert("X's score: "+XScore);
     }
     else if (cmd.toLowerCase() == "tie") {
