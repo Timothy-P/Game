@@ -352,16 +352,16 @@ function Score(str) {
     }
 };
 function ShowScore(cmd) {
-    if (cmd.toLowerCase() == "All") {
+    if (cmd.toLowerCase() == "all") {
         alert("X's score: "+XScore+"\nO's score: "+OScore+"\nThere have been "+Tie+" ties during this session.");
     }
-    else if (cmd.toLowerCase() == "O") {
+    else if (cmd.toLowerCase() == "o") {
         alert("O's score: "+OScore);
     }
-    else if (cmd.toLowerCase() == "X") {
+    else if (cmd.toLowerCase() == "s") {
         alert("X's score: "+XScore);
     }
-    else if (cmd.toLowerCase() == "Tie") {
+    else if (cmd.toLowerCase() == "tie") {
         alert("There have been "+Tie+" ties during this session.");
     }
     else {
