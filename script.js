@@ -289,6 +289,7 @@ function winCon() {
     if (UL.textContent != "" && UM.textContent != "" && UR.textContent != "" && ML.textContent != "" && MM.textContent != "" && MR.textContent != "" && BL.textContent != "" && BM.textContent != "" && BR.textContent != "") {
         console.log("A tie has been supposedly reached.")
         alert("It seems you have reached a tie.")
+        Score("Tie")
         reset()
     }
 }
