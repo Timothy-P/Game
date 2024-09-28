@@ -1,3 +1,1 @@
-Just Tic-Tac-Toe if you get bored. This doesn't use any external libraries that are super-required. jQuery is in there, but I don't use it at the moment.
-
-Currently making: Nothing. I'm not sure if I have finished/fixed it, but I'll have to see by getting some test subjects.
+Just Tic-Tac-Toe if you get bored. This doesn't use external libraries, which makes it almost universally available. If you find an issue, let me know. I don't care to fix my mistakes.
